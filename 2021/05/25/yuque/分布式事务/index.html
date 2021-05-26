@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DEMO, 残酒">
+    <meta name="keywords" content="分布式事务, 残酒">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DEMO | 残酒</title>
+    <title>分布式事务 | 残酒</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DEMO</h1>
+                    <h1 class="description center-align post-title">分布式事务</h1>
                 </div>
             </div>
         </div>
@@ -368,33 +368,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                <span class="chip bg-color">博客搭建</span>
-                            </a>
-                        
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
-                            </a>
-                        
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -427,126 +406,122 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/131683/1618478553167-dcb6c430-0bca-48e3-a79a-5a44244cc36b.jpeg#height=215&id=fBaDt&margin=%5Bobject%20Object%5D&name=15.jpg&originHeight=860&originWidth=860&originalType=binary&size=80189&status=done&style=none&width=215" alt="15.jpg"></p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Blog CI/CD
-
-<span class="token key atrule">on</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>push<span class="token punctuation">,</span> repository_dispatch<span class="token punctuation">]</span>
-
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">blog-cicd</span><span class="token punctuation">:</span>
-    <span class="token key atrule">name</span><span class="token punctuation">:</span> Hexo blog build &amp; deploy
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
-    <span class="token key atrule">env</span><span class="token punctuation">:</span>
-      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout codes
-      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
-
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup node
-      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v1
-      <span class="token key atrule">with</span><span class="token punctuation">:</span>
-        <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">'12.x'</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Cache node modules
-      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/cache@v1
-      <span class="token key atrule">with</span><span class="token punctuation">:</span>
-        <span class="token key atrule">path</span><span class="token punctuation">:</span> ~/.npm
-        <span class="token key atrule">key</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> runner.os <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">-</span>node<span class="token punctuation">-</span>$<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> hashFiles('<span class="token important">**/package-lock.json')</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install dependencies
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-        npm install hexo-cli -g
-        npm install yuque-hexo -g
-        npm install
-        yuque-hexo sync</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Generate files
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> hexo generate
-
-    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy blog
-    	<span class="token key atrule">evn</span><span class="token punctuation">:</span>
-      	<span class="token key atrule">Github_Pages</span><span class="token punctuation">:</span> github.com/sbwit/sbwit.github.io
-        <span class="token key atrule">Github_Token</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.TOKEN_GITHUBAPI <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-      <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-        git clone "https://$&#123;Github_Pages&#125;" deploy_git
-        mv ./deploy_git/.git ./public/
-        cd ./public
-        git config user.name "sbwit"
-        git config user.email "17740857130@qq.com"
-        git add .
-        git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://$&#123;Github_Token&#125;@$&#123;Github_Pages&#125;" master:master</span></code></pre>
-
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># -*- coding: utf8 -*-</span>
-import requests
-def main_handler(event<span class="token punctuation">,</span> <span class="token key atrule">context)</span><span class="token punctuation">:</span>
-	r = requests.post("https<span class="token punctuation">:</span>//api.github.com/repos/sbwit/sbwit.hexo/dispatches"<span class="token punctuation">,</span>
-	json = <span class="token punctuation">&#123;</span><span class="token key atrule">"event_type"</span><span class="token punctuation">:</span> <span class="token string">"start"</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-	headers = <span class="token punctuation">&#123;</span>"User<span class="token punctuation">-</span>Agent"<span class="token punctuation">:</span><span class="token string">'curl/7.52.1'</span><span class="token punctuation">,</span>
-				<span class="token key atrule">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
-				<span class="token key atrule">'Accept'</span><span class="token punctuation">:</span> <span class="token string">'application/vnd.github.everest-preview+json'</span><span class="token punctuation">,</span>
-				<span class="token key atrule">'Authorization'</span><span class="token punctuation">:</span> <span class="token string">'token GITHUB_TOKEN(自己的)'</span><span class="token punctuation">&#125;</span>)
-	<span class="token key atrule">if r.status_code == 204</span><span class="token punctuation">:</span>
-		return "This's OK<span class="token tag">!</span>"
-	<span class="token key atrule">else</span><span class="token punctuation">:</span>
-		return r.status_code</code></pre>
-
-<p>官方的配置</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># workflow name</span>
-<span class="token key atrule">name</span><span class="token punctuation">:</span> CI Hexo
-
-<span class="token comment"># master branch on push, auto run</span>
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> master
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">Deploy-Pages</span><span class="token punctuation">:</span>
-    <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Hexo Public To Pages
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
-
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token comment"># check it to your workflow can access it</span>
-      <span class="token comment"># from: https://github.com/actions/checkout</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout Repository master branch
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@master
-
-      <span class="token comment"># from: https://github.com/actions/setup-node</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js 10.x
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@master
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">"12.14"</span>
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Git Infomation
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          git config --global user.name 'sbwit' 
-          git config --global user.email '17740857130@163.com'</span>
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Get Latest Commit Message
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          git log --pretty=format:"%s from Github Actions at `date +"%Y-%m-%d %H:%M:%S"`" --date=short -n 1 > commit-message.log</span>
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Hexo Dependencies
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          npm install hexo-cli -g 
-          npm install</span>
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Generate public files
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          hexo clean hexo generate</span>
-
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy To Github Pages
-        <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">Github_Pages</span><span class="token punctuation">:</span> github.com/sbwit/sbwit.github.io
-          <span class="token key atrule">Github_Token</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.TOKEN_GITHUBAPI <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
-          git clone https://$&#123;Github_Pages&#125; .github_pages 
-          cd .github_pages 
-          git checkout master 
-          cd ../ 
-          mv .github_pages/.git/ ./public/ 
-          cd ./public/ 
-          git add . 
-          git commit -F ../commit-message.log 
-          git push --force --quiet "https://$&#123;Github_Token&#125;@$&#123;Github_Pages&#125;" master:master</span></code></pre>
+                <ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">概要</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">分布式事务</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">分布式事务方案</a><ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">2PC/3PC</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">本地消息表</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">事务消息</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">TCC</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">Saga</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">Seata</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">分布式事务一致性与 Paxos 一致性的思考</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&chksm=fa496f8ecd3ee698f4954c00efb80fe955ec9198fff3ef4011e331aa37f55a6a17bc8c0335a8&scene=21&token=899450012%E2%9F%A8=zh_CN#wechat_redirect">总结</a></li>
+</ul>
+<p>在微服务架构盛行的情况下，在分布式的多个服务中保证业务的一致性，即分布式事务就显得尤为重要。本文将讲述分布式事务及其解决方案，有 XA 协议、TCC 和 Saga 事务模型、本地消息表、事务消息和阿里开源的 Seata。</p>
+<h1 id><a href="#" class="headerlink" title="["></a>[</h1><p>概要](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&amp;idx=1&amp;sn=18f64ba49f3f0f9d8be9d1fdef8857d9&amp;scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==∣=2247487551&amp;idx=1&amp;sn=18f64ba49f3f0f9d8be9d1fdef8857d9&amp;scene=21#wechat_redirect</a>)<br>在微服务架构盛行的情况下，在分布式的多个服务中保证业务的一致性，即分布式事务就显得尤为重要。本文将讲述分布式事务及其解决方案，有 XA 协议、TCC 和 Saga 事务模型、本地消息表、事务消息和阿里开源的 Seata。</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title="["></a>[</h1><p>分布式事务](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&amp;idx=1&amp;sn=18f64ba49f3f0f9d8be9d1fdef8857d9&amp;scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==∣=2247487551&amp;idx=1&amp;sn=18f64ba49f3f0f9d8be9d1fdef8857d9&amp;scene=21#wechat_redirect</a>)<br>聊什么是分布式事务前，先聊一下我们熟悉的单机事务。所谓单机事务是相对分布式事务来说的，即数据库事务。大家都知道数据库事务有 ACID 这四个特性：</p>
+<ul>
+<li>A（Atomicity）：指单个事务中的操作要不都执行，要不都不执行</li>
+<li>C（Consistency）：指事务前后数据的完整性必须保持一致</li>
+<li>I（Isolation）：指多个事务对数据可见性的规则</li>
+<li>D（Durability）：指事务提交后，就会被永久存储下来</li>
+</ul>
+<p>既然数据库事务有这四个特性的，那么分布式事务也不例外，应该具备这四个特性。<br>在微服务架构下，服务之间通过 RPC 远程调用，相对单机事务来说，多了“网络通信”这一不确定因素，使得本来服务的调用只有“成功”和“失败”这两种返回结果，变为“成功”、“失败”和“未知”三种返回结果。系统之间的通信可靠性从单一系统中的可靠变成了微服务架构之间的不可靠，分布式事务其实就是在不可靠的通信下实现事务的特性。一般因为网络导致的异常可能有机器宕机、网络异常、消息丢失、消息乱序、数据错误、不可靠的 TCP、存储数据丢失、其他异常等等。</p>
+<h1 id="-2"><a href="#-2" class="headerlink" title></a></h1><h1 id="分布式事务方案"><a href="#分布式事务方案" class="headerlink" title="分布式事务方案"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">分布式事务方案</a></h1><h2 id="2PC-3PC"><a href="#2PC-3PC" class="headerlink" title="2PC/3PC"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">2PC/3PC</a></h2><p>2PC 即二阶段提交 :</p>
+<blockquote>
+<p>二阶段提交（英语：Two-phase Commit）是指在计算机网络以及数据库领域内，为了使基于分布式系统架构下的所有节点在进行事务提交时保持一致性而设计的一种算法。通常，二阶段提交也被称为是一种协议（Protocol）。</p>
+</blockquote>
+<p>2PC 是一种协议，它的作用保证在分布式系统中每个节点要不都提交事务，要么都取消事务。这个跟 ACID 中的 A 原子性的定义很像。<br>2PC 引入一个第三方的节点协调者，即 Coordinator，其他参与事务的节点为参与者，即 Participants。协调者统筹整个事务行为，负责通知参与者进行 Commit 还是 Rollback 操作。<br>2PC 的过程比较简单，分为两个阶段：</p>
+<ol>
+<li><p>准备阶段<br>协调者分别给每个参与者发送 Prepare 消息，每个参与者收到消息后，进行“预提交”操作（不是实际的提交操作），把操作的结果（成功或失败）返回给协调者。</p>
+</li>
+<li><p>提交阶段<br>协调者根据准备阶段收到的参与者的返回结果进行判断，如果所有的参与者都返回成功，那么分别给每个参与者发送 Commit 消息，否则发送 Rollback 消息。</p>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621910935223-c50eb2b1-6526-4e2a-adb0-a4a09843da15.webp#align=left&display=inline&height=331&margin=%5Bobject%20Object%5D&originHeight=331&originWidth=1080&size=0&status=done&style=none&width=1080"><br>2PC 是一个强一致性协议，同时它在实际应用中还存在几个问题</p>
+<ul>
+<li>同步阻塞，2PC 的两个阶段中，协调者和参与者的通信都是同步的，这会导致整个事务的长时间阻塞</li>
+<li>Coordinator 的单点问题</li>
+<li>数据不一致，在 Commit 阶段，可能存在只有部分参与者收到 Commit 消息（或处理成功）的情况</li>
+</ul>
+<h3 id="3PC"><a href="#3PC" class="headerlink" title="3PC"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">3PC</a></h3><p>3PC 即三阶段提交，它比 2PC 多了一个阶段，即把原来 2PC 的准备阶段拆分成 CanCommit 和 PreCommit 两个阶段，同时<br>引入超时机制来解决 2PC 的同步阻塞问题。<br><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621910984830-93e8802c-cf84-48bb-b6e3-db385be17eed.webp#align=left&display=inline&height=546&margin=%5Bobject%20Object%5D&originHeight=546&originWidth=1080&size=0&status=done&style=none&width=1080"></p>
+<p>但是在我看来 3PC 并没有解决 2PC 的根本问题，它只是在 2PC 的基础上做了一些优化，它增加了一个阶段（也增加了 1 个 RTT）来提高对方可用性的概率，这本质跟 TCP 的三次握手一样，同样也改为四次握手，五次握手等等。</p>
+<h3 id="XA"><a href="#XA" class="headerlink" title="XA"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">XA</a></h3><p>XA 是一种基于 2PC 协议实现的规范。在 2PC 中没有明确资源是什么，以及资源是怎么提交的等等，而 XA 就是数据库实现 2PC 的规范，已知常用的支持 XA 的关系型数据库有 Mysql、Oracle 等。</p>
+<h2 id="本地消息表"><a href="#本地消息表" class="headerlink" title="本地消息表"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">本地消息表</a></h2><p>本地消息表方案应该是业界内使用最为广泛的，因为它使用简单，成本比较低。<br>本地消息表的方案最初是由 eBay 提出（完整方案），核心思路是将分布式事务拆分成本地事务进行处理。<br>它的处理流程如下：</p>
+<ul>
+<li>事务发起方把要处理的业务事务和写消息表这两个操作放在同一个本地事务里</li>
+<li>事务发起方有一个定时任务轮询消息表，把没处理的消息发送到消息中间件</li>
+<li>事务被动方从消息中间件获取消息后，返回成功</li>
+<li>事务发起方更新消息状态为已成功</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621911001393-d7dc8369-50c8-4e6d-b373-9486578d60e0.webp#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&originHeight=495&originWidth=1080&size=0&status=done&style=none&width=1080"></p>
+<p>从处理流程来看，本地消息表方案是一个基于消息中间件的可靠性来达到事务的最终一致性的方案。<br>一些分析：</p>
+<ul>
+<li><p>把业务处理和写消息表放在同一个事务是为了失败/异常后可以同时回滚</p>
+</li>
+<li><p>为什么不直接发消息，而是先写消息表？<br>试想，如果发送消息超时了，即不确定消息中间件收到消息没，那么你是重试还是抛异常回滚事务呢？回滚是不行的，因为可能消息中间件已经收到消息，接收方收到消息后做处理，导致双方数据不一致了；重试也是不行的，因为有可能会一直重试失败，导致事务阻塞。</p>
+</li>
+<li><p>基于上述分析，消息的接收方是需要做幂等操作的</p>
+</li>
+</ul>
+<p>本地消息表方案整体来说还是比较简单、可用的，但是也有以下缺点：</p>
+<ul>
+<li>消息数据和业务数据耦合，消息表需要根据具体的业务场景制定，不能公用。就算可以公用消息表，对于分库的业务来说每个库都是需要消息表的。</li>
+<li>只适用于最终一致的业务场景。例如在 A -&gt; B 场景下，在不考虑网络异常、宕机等非业务异常的情况下，A 成功的话，B 肯定也会成功的。</li>
+</ul>
+<h2 id="事务消息"><a href="#事务消息" class="headerlink" title="事务消息"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">事务消息</a></h2><p>事务消息是通过消息中间件来解耦本地消息表和业务数据表，适用于所有对数据最终一致性需求的场景。现在支持事务消息的消息中间件只有 RocketMQ，这个概念最早也是 RocketMQ 提出的。<br>通过事务消息实现分布式事务的流程如下：</p>
+<ol>
+<li>发起方发送半事务消息会给 RocketMQ ，此时消息的状态 prepare，接受方还不能拉取到此消息</li>
+<li>发起方进行本地事务操作</li>
+<li>发起方给 RocketMQ 确认提交消息，此时接受方可以消费到此消息了</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621911026953-42f5ba40-db3c-4c2b-9d30-0dbc1a2579f9.webp#align=left&display=inline&height=373&margin=%5Bobject%20Object%5D&originHeight=373&originWidth=1080&size=0&status=done&style=none&width=1080"><br>步骤 1 和 3 失败/异常该如何处理：<br>RocketMQ 会定期扫描还没确认的消息，回调给发送方，询问此次事务的状态，根据发送方的返回结果把这条消息进行取消还是提交确认。<br>可以看出事务消息的本质的借鉴了二阶段提交的思想，它跟本地消息表的做法也很像，事务消息做的事情其实就是把消息表的存储和扫描消息表这两个事情放到消息中间件来做，使得消息表和业务表解耦。</p>
+<h2 id="TCC"><a href="#TCC" class="headerlink" title="TCC"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">TCC</a></h2><p>TCC （Try-Confirm-Cancel）事务模型采用的是补偿机制，其核心思想是：针对每个操作，都要注册一个与其对应的确认和补偿操作。<br>相当于 XA 来说，TCC 可以不依赖于资源管理器，即数据库，它是通过业务逻辑来控制确认和补偿操作的，所以它用了’Cancel’而非’Rollback’的字眼。它是一个应用层面的 2PC。<br>TCC 分为三个阶段：</p>
+<ul>
+<li>Try 阶段，对业务资源进行检测和预留</li>
+<li>Confirm 阶段，对 Try 阶段预留的资源进行确认提交，Try 阶段执行成功是 Confirm 阶段执行成功的前提</li>
+<li>Cancel 阶段，对 Try 阶段预留的资源进行撤销或释放</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621911047716-357631cd-5bce-465a-8cec-34a4743847a1.webp#align=left&display=inline&height=498&margin=%5Bobject%20Object%5D&originHeight=498&originWidth=1080&size=0&status=done&style=none&width=1080"><br>看上去 TCC 跟 2PC/3PC 可能有点像，但是 TCC 强调的是补偿，而且对于对资源的“预留”，“确认”，“释放”，TCC 并没有明确说要如何做，这个具体是要业务来定义的。<br>例如在转账的场景，“预留”操作可能就是对账号里的部分资金进行冻结，这样这个资金只能是当前事务才能用，别的事务用不了。<br>另外，对于异常的场景，TCC 也没有说要怎么做，因为 Try、Confirm、Cancel 都是业务定义的，这三个阶段中发生了异常，那么就由业务来做相应的处理。一般都有以下几种处理：</p>
+<ul>
+<li>如果 Try 成功了，那么 Confirm 阶段异常了就一直重试，直到成功</li>
+<li>Try、Confirm、Cancel 三个阶段都有相应的资源及事务日志，应用根据日志（异步）来做重试或补偿</li>
+<li>TCC 的实现依赖底层数据库，异常后直接利用数据库的事务机制回滚</li>
+</ul>
+<p>其中现在使用比较多的 TCC 框架 ByteTCC、tcc-transaction 的原理都是基于第三点<br>同时，在实现 TCC 时要注意以下三个问题</p>
+<ul>
+<li><p>允许空回滚<br>在 Try 没有真正执行的情况下，触发了 Cancel 操作，这时要允许 Cancel 成功</p>
+</li>
+<li><p>防悬挂控制<br>Cancel 操作比 Try 操作先执行（网络延迟原因），后面的 Try 操作不能执行成功</p>
+</li>
+<li><p>幂等控制</p>
+</li>
+</ul>
+<p>TCC 其实是把控制事务的逻辑放在业务应用层面，而非资源管理器，这样实现起来就会相对灵活很多，但相对对数据一致性的保证可能没那么强（具体看怎么实现 Try），整体来说 TCC 还有以下缺点：</p>
+<ul>
+<li>对于 Confirm 和 Cancel 阶段失败后要完全靠业务应用自己去处理</li>
+<li>每个业务都需要实现 Try、Confirm、Cancel 三个接口，代码量比较多</li>
+<li>如果是基于现有的业务想使用 TCC 会比较困难。一是对于原来的接口要拆分为三个接口，入侵性比较大；二是因为要做“预留”资源的操作，有可能需要对原来的业务模型进行改造。</li>
+</ul>
+<h2 id="Saga"><a href="#Saga" class="headerlink" title="Saga"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">Saga</a></h2><p>Saga 事务模型又叫做长时间运行的事务（Long-running-transaction）, 它是由普林斯顿大学的 H.Garcia-Molina 等人提出，它描述的是另外一种在没有两阶段提交的的情况下解决分布式系统中复杂的业务事务问题。Saga 的论文。<br>该模型其核心思想就是拆分分布式系统中的长事务为多个短事务，或者叫多个本地事务，然后由 Saga 工作流引擎负责协调，如果整个流程正常结束，那么就算是业务成功完成，如果在这过程中实现失败，那么 Saga 工作流引擎就会以相反的顺序调用补偿操作，重新进行业务回滚。<br>Saga 也是一种补偿协议，在 Saga 模式下，分布式事务内有多个参与者，每一个参与者都是一个冲正补偿服务，需要用户根据业务场景实现其正向操作和逆向回滚操作。<br><img src="https://cdn.nlark.com/yuque/0/2021/webp/131683/1621911068617-a9c4d7bd-07ee-40b7-8bdc-da3eac2c7f73.webp#align=left&display=inline&height=910&margin=%5Bobject%20Object%5D&originHeight=910&originWidth=886&size=0&status=done&style=none&width=886"><br>你可以看到 Saga 跟 TCC 很像，但是 Saga 更加宽松，一致性更弱，在 Saga 看来，在一阶段直接做提交/确认操作就好了，有问题再做补偿。这样的话，Saga 可以拥有比 XA 和 TCC 更好的性能（XA、TCC 需要锁定资源或预留资源），而且 Saga 强调通过事件驱动异步处理，实现高吞吐。<br>可以看出 Saga 是对 TCC 的一种“妥协”，从 TCC 的三个接口变为两个接口，一阶段直接提交缺少对资源的隔离（如果一阶段提交后，后面发现需要做补偿，但是补偿操作执行前有另外的事务更改了数据，这时数据已经变“脏”了，那么这时该如何处理是一个问题。在 TCC 没有这个问题，因为资源已经被 hold 住了），因此对使用者也是比较宽松的，对于现有业务的改造也会比较简单。<br>Saga 实现分两种，一种是 Saga 状态机实现，一种是 Saga AOP Proxy 实现。Saga 状态机实现，在关于参与者服务编排实现又有集中式和协同式两种分支。这点就不展开了。</p>
+<h3 id="TCC-vs-Saga"><a href="#TCC-vs-Saga" class="headerlink" title="TCC vs Saga"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">TCC vs Saga</a></h3><p>TCC 和 Saga 都属于补偿型事务模型，Saga 没有 Try，直接 Commit，所有会产生实际的事务痕迹，而补偿做的是反向操作。TCC 是二阶段的广义实现，利用了数据的中间态，Cancel 是中间状态的数据进行撤销，从而不存在数据污染问题。<br>使用场景对比：</p>
+<ul>
+<li>TCC 适用于执行时间确定且较短、对一致性要求比较高、数据隔离强的业务</li>
+<li>Saga 适用于业务流程长、业务流程多的业务，在银行业金融机构使用广泛</li>
+<li>TCC 对现有业务改造较大，Saga 则相对少点</li>
+</ul>
+<h2 id="Seata"><a href="#Seata" class="headerlink" title="Seata"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">Seata</a></h2><p>Seata 是一个由阿里做背书的分布式事务框架，致力于提供高性能和简单易用的分布式事务服务。Seata 将为用户提供了 AT、TCC、SAGA 和 XA 事务模式，为用户打造一站式的分布式解决方案。</p>
+<h3 id="AT-模式"><a href="#AT-模式" class="headerlink" title="AT 模式"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">AT 模式</a></h3><p>AT 模式是 Seata 通过拦截、解释用户的 SQL，对业务数据进行加锁、回滚等操作的基于二阶段协议的一个实现。<br>它的特点是对业务无入侵，用户只需关注自己的“业务 SQL”，用户的 “业务 SQL” 作为一阶段，Seata 框架会自动生成事务的二阶段提交和回滚操作。<br>在一阶段，Seata 会拦截“业务 SQL”，首先解析 SQL 语义，找到“业务 SQL”要更新的业务数据，在业务数据被更新前，将其保存成“before image”，然后执行“业务 SQL”更新业务数据，在业务数据更新之后，再将其保存成“after image”，最后生成行锁。以上操作全部在一个数据库事务内完成，这样保证了一阶段操作的原子性。<br>二阶段如果是提交的话，因为“业务 SQL”在一阶段已经提交至数据库， 所以 Seata 框架只需将一阶段保存的快照数据和行锁删掉，完成数据清理即可。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/131683/1621911086887-3ddcccee-8575-4fb6-b3cf-e1ed26a52971.png#align=left&display=inline&height=664&margin=%5Bobject%20Object%5D&originHeight=664&originWidth=1080&size=0&status=done&style=none&width=1080"></p>
+<h3 id="TCC-模式"><a href="#TCC-模式" class="headerlink" title="TCC 模式"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">TCC 模式</a></h3><p>Seata 的 TCC 模式跟上面讲的 TCC 事务模型差不多</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/131683/1621911102959-77cf62b3-faa2-40d6-aa3e-263a88920157.png#align=left&display=inline&height=585&margin=%5Bobject%20Object%5D&originHeight=585&originWidth=1080&size=0&status=done&style=none&width=1080"></p>
+<h3 id="Saga-模式"><a href="#Saga-模式" class="headerlink" title="Saga 模式"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">Saga 模式</a></h3><p>Saga 模式也是上面讲的 Saga 事务模型差不多。在 Seata 中对服务的编排引入了状态机引擎， 使得对业务流程的定义更加标准化，提高可读性，不过相对来说配置会比较复杂繁琐。同时支持注解的方式，这个在开发上会简单一点，但功能可能少一点。</p>
+<h1 id="分布式事务一致性与-Paxos-一致性的思考"><a href="#分布式事务一致性与-Paxos-一致性的思考" class="headerlink" title="分布式事务一致性与 Paxos 一致性的思考"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">分布式事务一致性与 Paxos 一致性的思考</a></h1><p>首先要明确一点的就是对于上述提到的分布式事务解决方案，如 TCC、Saga、本地消息表等，其本质都是 2PC。<br>Paxos 算法解决的问题是一个分布式系统如何就某个值（决议）达成一致。<br>咋看起来 2PC 和 Paxos 都是解决关于“一致性”的问题，其实细想它们解决的问题不在一个层面。<br>2PC 要求分布式系统中的每个节点要不全部成功，要不全部失败，强调的是原子性。<br>Paxos 要求多个副本之间的数据一致性，其实这里用“一致性”并不准确，应该用“共识（Consensus）”才对。<br>例如 2PC 中的协调者单点的问题可以用 Paxos 算法通过选举出新的协调者来解决。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==%E2%88%A3=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect">总结</a></h1><p>总得看来，分布式事务的解决方案都很难做到有高一致性的同时，也有高性能，同时在实现上也有一定的难度。在业务允许的情况下，我们通常处理分布式事务的一般原则应是：业务规避 &gt; 最终一致 &gt; 强一致。</p>
 
                 
             </div>
@@ -573,7 +548,7 @@ def main_handler(event<span class="token punctuation">,</span> <span class="toke
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.sbwit.com/2017/12/13/yuque/DEMO/">https://www.sbwit.com/2017/12/13/yuque/DEMO/</a>
+                    <a href="https://www.sbwit.com/2021/05/25/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">https://www.sbwit.com/2021/05/25/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,19 +585,7 @@ def main_handler(event<span class="token punctuation">,</span> <span class="toke
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                                    <span class="chip bg-color">博客搭建</span>
-                                </a>
-                            
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
-                                </a>
-                            
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -670,13 +633,50 @@ def main_handler(event<span class="token punctuation">,</span> <span class="toke
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/13/yuque/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8C%87%E5%8D%97/">
+                <a href="/2021/05/26/yuque/MySQL%20%E4%BC%98%E5%8C%96%E5%8E%9F%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="单元测试指南">
+                        <img src="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="MySQL 优化原理">
                         
-                        <span class="card-title">单元测试指南</span>
+                        <span class="card-title">MySQL 优化原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            sbwit
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/13/yuque/SpringBoot%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="SpringBoot单元测试">
+                        
+                        <span class="card-title">SpringBoot单元测试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -686,9 +686,9 @@ def main_handler(event<span class="token punctuation">,</span> <span class="toke
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -710,64 +710,6 @@ def main_handler(event<span class="token punctuation">,</span> <span class="toke
                     
                     <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
                         <span class="chip bg-color">单元测试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2017/12/13/yuque/DEMO/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/sbwit/sbwit.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="DEMO">
-                        
-                        <span class="card-title">DEMO</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-12-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
                     </a>
                     
                 </div>
